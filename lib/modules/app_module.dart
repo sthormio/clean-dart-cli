@@ -1,9 +1,11 @@
 import 'package:args/args.dart';
+import 'package:clean_dart_cli/modules/common_commands/common_module.dart';
 
 import 'generate_layers/generate_module.dart';
 
 class AppModule {
   GenerateModule generate;
+  CommonCommandsModule commandsModule;
   ArgResults argResults;
   ArgParser argParser;
 
@@ -48,6 +50,7 @@ class AppModule {
     argParser = ArgParser();
     _addOptionsArguments(argParser);
     generate = GenerateModule();
+    commandsModule = CommonCommandsModule();
   }
 
   AppModule() {

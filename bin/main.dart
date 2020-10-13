@@ -1,9 +1,13 @@
 import 'package:clean_dart_cli/modules/app_module.dart';
+import 'package:clean_dart_cli/modules/common_commands/controllers/common_commands_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_layer_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_domain_controller.dart';
 import 'package:clean_dart_cli/shared/utils/output_utils.dart' as output;
 
 AppModule appModule;
+
+// List<String> arguments = ['upgrade'];
+
 void main(List<String> arguments) {
   _wellcomeMessage();
   appModule = AppModule();
@@ -11,8 +15,21 @@ void main(List<String> arguments) {
       appModule.generate.getIt<GenerateLayerController>();
   var generateUsecaseController =
       appModule.generate.getIt<GenerateDomainController>();
+  var commomCommandsController =
+      appModule.commandsModule.getIt<CommomCommandsController>();
 
   var isValidArguments = _validateArguments(arguments);
+  print(isValidArguments);
+
+  if (isValidArguments != null) {
+    switch (arguments[0]) {
+      case 'upgrade':
+        commomCommandsController.upgradeCli();
+        break;
+      default:
+    }
+    return;
+  }
 
   if (isValidArguments != null) {
     switch (arguments[1]) {
@@ -74,6 +91,11 @@ String _validateArguments(List<String> arguments) {
   }
 
   appModule.argResults = appModule.argParser.parse(arguments);
+  print(appModule.argResults.arguments);
+
+  if (appModule.argResults.arguments[0] == 'upgrade') {
+    return arguments[0];
+  }
 
   if (appModule.argResults['version']) {
     output.title('Clean Dart CLI at version 0.0.0');

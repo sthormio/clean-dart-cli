@@ -12,6 +12,7 @@ dependencies:
  get_it: ^5.0.1
  ansicolor: ^1.0.2
  recase: ^3.0.0
+ process_run: ^0.11.0+2
 
 dev_dependencies:
   test: ^1.14.4
