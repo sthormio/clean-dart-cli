@@ -45,21 +45,21 @@ void main(List<String> arguments) {
         if (arguments.length > 3) {
           generateUsecaseController.generateModel(arguments[3], arguments[2]);
         } else {
-          output.error('Missing arguments, especific your entity name');
+          output.error('Missing arguments, especific your model name');
         }
         break;
       case 'error':
         if (arguments.length > 3) {
           generateUsecaseController.generateError(arguments[3], arguments[2]);
         } else {
-          output.error('Missing arguments, especific your entity name');
+          output.error('Missing arguments, especific your error name');
         }
         break;
       case 'modelJs':
         if (arguments.length > 3) {
           generateUsecaseController.generateModelJs(arguments[3], arguments[2]);
         } else {
-          output.error('Missing arguments, especific your entity name');
+          output.error('Missing arguments, especific your modelJs name');
         }
         break;
       default:
