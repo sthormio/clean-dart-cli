@@ -1,7 +1,7 @@
 name: clean_dart_cli
-description: A sample command-line application.
-# version: 1.0.0
-# homepage: https://www.example.com
+description: This project is one cli for integrate Flutter and Dart with Clean Architecture
+version: 0.0.1
+homepage: https://github.com/sthormio/clean-dart-cli
 
 environment:
   sdk: '>=2.8.1 <3.0.0'
