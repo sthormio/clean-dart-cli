@@ -11,7 +11,7 @@ class CommomCommandsController {
     try {
       var result = await _iUpgradeCLI();
       if (result) {
-        output.title('clean-dart upgraded');
+        output.title('clean-dart is upgraded at version ');
       }
     } on UpgradeError catch (e) {
       output.error(e.message);
