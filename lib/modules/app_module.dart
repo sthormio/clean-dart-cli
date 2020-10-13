@@ -23,9 +23,25 @@ class AppModule {
       help: 'command to generate something',
     );
 
-    argParser.addFlag('help', abbr: 'h', negatable: false);
+    argParser.addOption(
+      'upgrade',
+      abbr: 'u',
+      help: 'command to upgrade your clean-dart-cli',
+    );
 
-    argParser.addFlag('version', abbr: 'v', negatable: false);
+    argParser.addFlag(
+      'help',
+      abbr: 'h',
+      negatable: false,
+      help: 'command to show all commands ables',
+    );
+
+    argParser.addFlag(
+      'version',
+      abbr: 'v',
+      negatable: false,
+      help: 'command to show the current version of the clean-dart-cli',
+    );
   }
 
   void _bootstrap() {
