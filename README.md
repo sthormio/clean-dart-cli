@@ -11,7 +11,7 @@ With this cli you can generate the structure of the folders based on the structu
 First thing that you need to do is activate the clean-dart-cli, for this run the command bellow in your terminal
 
 ```dart
-$ pub global activate --source git https://github.com/NitoBa/cli-cleandart.git
+$ pub global activate --source git https://github.com/sthormio/clean-dart-cli.git
 ```
 
 ### Generate the layers folders
