@@ -19,9 +19,6 @@ class CommomCommandsController {
   }
 
   Future<void> getVersionCli() async {
-    var result = await _getVersionCli();
-    if (result) {
-      // output.title('Clean Dart CLI at version 0.0.0');
-    }
+    await _getVersionCli();
   }
 }
