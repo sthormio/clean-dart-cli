@@ -110,7 +110,7 @@ $ clean-dart upgrade
 ## List Commands
 
 ```dart
-$ clean-dart
+$ clean-dart --help
 ```
 
 ## How to contribute?
