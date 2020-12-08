@@ -1,3 +1,7 @@
+## 0.0.21+2
+
+* Update readme
+
 ## 0.0.21+1
 
 * Fix images broken on readme

@@ -1,6 +1,6 @@
 name: clean_dart_cli
 description: This project is one CLI for integrate Flutter and Dart with Clean Architecture
-version: 0.0.21+1
+version: 0.0.21+2
 homepage: https://github.com/sthormio/clean-dart-cli
 
 environment:
