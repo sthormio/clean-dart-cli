@@ -1,6 +1,6 @@
 # Clean Dart CLI
 
-![screenshots/logo.png](screenshots/logo.png)
+![screenshots/logo.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/logo.png?raw=true)
 
 This project is one cli for integrate Flutter and Dart with Clean Architecture
 
@@ -24,7 +24,7 @@ how to generate domain layer
 $ clean-dart gen layer domain /example
 ```
 
-![screenshots/domain.png](screenshots/domain.png)
+![screenshots/domain.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/domain.png?raw=true)
 
 how to generate infra layer
 
@@ -32,7 +32,7 @@ how to generate infra layer
 $ clean-dart gen layer infra /example
 ```
 
-![screenshots/infra.png](screenshots/infra.png)
+![screenshots/infra.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/infra.png?raw=true)
 
 how to generate external layer
 
@@ -40,7 +40,7 @@ how to generate external layer
 $ clean-dart gen layer external /example
 ```
 
-![screenshots/external.png](screenshots/external.png)
+![screenshots/external.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/external.png?raw=true)
 
 how to generate ui layer
 
@@ -48,7 +48,7 @@ how to generate ui layer
 $ clean-dart gen layer ui /example
 ```
 
-![screenshots/ui.png](screenshots/ui.png)
+![screenshots/ui.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/ui.png?raw=true)
 
 how to generate complete layers
 
@@ -56,7 +56,7 @@ how to generate complete layers
 $ clean-dart gen layer complete /example
 ```
 
-![screenshots/completedartcli.png](screenshots/completedartcli.png)
+![screenshots/completedartcli.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/completedartcli.png?raw=true)
 
 ### Generate Files
 
@@ -66,7 +66,7 @@ how to generate usecases
 $ clean-dart gen usecase /example/domain/usecases RegisterUser
 ```
 
-![screenshots/usecase.png](screenshots/usecase.png)
+![screenshots/usecase.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/usecase.png?raw=true)
 
 how to generate entities
 
@@ -74,7 +74,7 @@ how to generate entities
 $ clean-dart gen entity /example/domain/entities User
 ```
 
-![screenshots/entity.png](screenshots/entity.png)
+![screenshots/entity.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/entity.png?raw=true)
 
 how to generate models
 
@@ -82,19 +82,23 @@ how to generate models
 $ clean-dart gen model /example/infra/models User
 ```
 
-![screenshots/model.png](screenshots/model.png)
+![screenshots/model.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/model.png?raw=true)
 
 darthow to generate modelsJs (Model with Json Serializable)
 
+```dart
 $ clean-dart gen modelJs /user/external/models User
-![screenshots/model.png](screenshots/model_js.png)
+```
+
+![screenshots/model_js.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/model_js.png?raw=true)
 
 how to generate error
 
 ```dart
 $ clean-dart gen error /user/domain/error User
 ```
-![screenshots/model.png](screenshots/error.png)
+
+![screenshots/error.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/error.png?raw=true)
 
 
 ## Upgrade Clean Dart Cli
@@ -102,6 +106,13 @@ $ clean-dart gen error /user/domain/error User
 ```dart
 $ clean-dart upgrade
 ```
+
+## List Commands
+
+```dart
+$ clean-dart
+```
+
 ## How to contribute?
 
 You can clone this project and send a pull request with your improvements or open issues
