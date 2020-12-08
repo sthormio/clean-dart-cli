@@ -11,14 +11,14 @@ With this cli you can generate the structure of the folders based on the structu
 First thing that you need to do is activate the clean-dart-cli, for this run the command bellow in your terminal
 
 ```dart
-$ pub global activate --source git https://github.com/sthormio/clean-dart-cli.git
+$ pub global activate clean_dart_cli
 ```
 
 ### Generate the layers folders
 
 With clean-dart-cli you can generate all folders of the one specific layer
 
-how to generate domain layer 
+how to generate domain layer
 
 ```dart
 $ clean-dart gen layer domain /example
@@ -84,15 +84,13 @@ $ clean-dart gen model /example/infra/models User
 
 ![screenshots/model.png](screenshots/model.png)
 
-
-how to generate modelsJs (Model with Json Serializable)
+darthow to generate modelsJs (Model with Json Serializable)
 
 ```dart
 $ clean-dart gen modelJs /user/external/models User
 ```
 
 ![screenshots/model.png](screenshots/model_js.png)
-
 
 how to generate error
 
@@ -101,6 +99,19 @@ $ clean-dart gen error /user/domain/error User
 ```
 
 ![screenshots/model.png](screenshots/error.png)
+
+
+## Upgrade Clean Dart Cli
+
+```dart
+$ clean-dart upgrade
+```
+
+## List Commands
+
+```dart
+$ clean-dart
+```
 
 ## How to contribute?
 
