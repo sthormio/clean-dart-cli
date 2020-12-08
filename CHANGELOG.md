@@ -1,3 +1,3 @@
-## 1.0.0
+## 0.0.2 - First Publication
 
-- Initial version, created by Stagehand
+- Publish package on pubdev
