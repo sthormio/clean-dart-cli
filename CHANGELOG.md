@@ -1,3 +1,16 @@
-## 1.0.0
+## 0.0.21+2
 
-- Initial version, created by Stagehand
+* Update readme
+
+## 0.0.21+1
+
+* Fix images broken on readme
+
+## 0.0.21
+
+- Add new way to check version of the CLI
+- Update Readme
+
+## 0.0.2 - First Publication
+
+- Publish package on pubdev
