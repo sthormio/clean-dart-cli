@@ -19,9 +19,15 @@ void main(List<String> arguments) {
       appModule.commandsModule.getIt<CommomCommandsController>();
 
   var isValidArguments = _validateArguments(arguments);
-  print(isValidArguments);
 
   if (isValidArguments != null) {
+    switch (isValidArguments) {
+      case 'version':
+        commomCommandsController.getVersionCli();
+        break;
+      default:
+    }
+
     switch (arguments[0]) {
       case 'upgrade':
         commomCommandsController.upgradeCli();
@@ -91,15 +97,13 @@ String _validateArguments(List<String> arguments) {
   }
 
   appModule.argResults = appModule.argParser.parse(arguments);
-  print(appModule.argResults.arguments);
-
+  // print(appModule.argResults.arguments);
   if (appModule.argResults.arguments[0] == 'upgrade') {
     return arguments[0];
   }
 
   if (appModule.argResults['version']) {
-    output.title('Clean Dart CLI at version 0.0.0');
-    return null;
+    return 'version';
   }
 
   if (appModule.argResults['help']) {

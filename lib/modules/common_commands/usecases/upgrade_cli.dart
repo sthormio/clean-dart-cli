@@ -10,7 +10,7 @@ class UpgradeCLI implements IUpgradeCLI {
 
     try {
       await shell.run(
-        'pub global activate --source git https://github.com/sthormio/clean-dart-cli.git',
+        'pub global activate clean_dart_cli',
       );
       return true;
     } catch (e) {
