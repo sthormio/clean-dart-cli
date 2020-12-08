@@ -1,3 +1,7 @@
+## 0.0.21+3
+
+* Fix bug get version
+
 ## 0.0.21+2
 
 * Update readme
