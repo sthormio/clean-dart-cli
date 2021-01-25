@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Fix bug to generate folders and files
+
 ## 0.0.21+3
 
 * Fix bug get version
