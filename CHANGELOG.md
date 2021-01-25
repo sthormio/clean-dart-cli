@@ -1,4 +1,4 @@
-## 0.0.3
+## 0.0.30
 
 * Fix bug to generate folders and files
 
