@@ -14,7 +14,7 @@ class UpgradeCLI implements IUpgradeCLI {
       );
       return true;
     } catch (e) {
-      throw UpgradeError();
+      throw UpgradeError(innerException: Exception());
     }
   }
 }

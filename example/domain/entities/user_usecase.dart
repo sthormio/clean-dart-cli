@@ -1,9 +1,9 @@
-abstract class IUser {
+abstract class IUserUsecase {
   Future<void>call();
 }
 
 
-class User implements IUser {
+class UserUsecase implements IUserUsecase {
   @override
   Future<void> call() {
     // TODO: implement call

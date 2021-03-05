@@ -1,3 +1,8 @@
+## 1.0.0
+
+* Add null-safety support
+* Improvements generating files
+
 ## 0.0.31
 
 * Fix bug to generate folders and files

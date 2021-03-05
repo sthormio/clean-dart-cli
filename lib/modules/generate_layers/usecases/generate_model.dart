@@ -15,14 +15,14 @@ class GenerateModel implements IGenerateModel {
             .exists();
 
     if (existFile) {
-      throw FileExistsError();
+      throw FileExistsError(innerException: Exception());
     }
 
     if (isValidDirectory) {
-      await File('${path}/${ReCase(modelName).snakeCase}_model.dart')
+      File('${path}/${ReCase(modelName).snakeCase}_model.dart')
           .createSync(recursive: true);
       var content = modelTemplate(modelName);
-      await File('${path}/${ReCase(modelName).snakeCase}_model.dart')
+      File('${path}/${ReCase(modelName).snakeCase}_model.dart')
           .writeAsStringSync(content);
       return true;
     } else {

@@ -8,11 +8,11 @@ part '${ReCase(modelName).snakeCase}_model.g.dart';
 
 @JsonSerializable()
 class ${ReCase(modelName).pascalCase}Model extends ${modelName}Entity {
-  ${ReCase(modelName).pascalCase}Model({String id, String userName}):super(
+  ${ReCase(modelName).pascalCase}Model({required String id, required String userName}):super(
     id:id, userName:userName,
     );
 
-  factory ${ReCase(modelName).pascalCase}.fromJson(Map<String, dynamic> json) =>_\$${ReCase(modelName).pascalCase}FromJson(json);
+  factory ${ReCase(modelName).pascalCase}Model.fromJson(Map<String, dynamic> json) =>_\$${ReCase(modelName).pascalCase}FromJson(json);
 
   Map<String, dynamic> toJson() => _\$${ReCase(modelName).pascalCase}ToJson(this);
   

@@ -15,14 +15,14 @@ class GenerateUsecases implements IGenerateUsecases {
             .exists();
 
     if (existFile) {
-      throw FileExistsError();
+      throw FileExistsError(innerException: Exception());
     }
 
     if (isValidDirectory) {
-      await File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
+      File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
           .createSync(recursive: true);
       var content = usecaseTemplate(usecaseName);
-      await File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
+      File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
           .writeAsStringSync(content);
       return true;
     } else {
