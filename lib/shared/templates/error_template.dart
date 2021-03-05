@@ -4,12 +4,11 @@ String errorTemplate(String errorName) {
   var output = '''
 class ${ReCase(errorName).pascalCase}Error implements Exception {
   final String _message;
-  final Exception innerException;
+  final Exception? innerException;
 
-  ${ReCase(errorName).pascalCase}Error({String message, this.innerException}) : _message = message;
+  ${ReCase(errorName).pascalCase}Error({required String message, this.innerException}) : _message = message;
 
-  String get message =>
-      _message ?? innerException.toString()?.replaceAll('Exception: ', '');
+  String get message => _message;
 }
   ''';
 

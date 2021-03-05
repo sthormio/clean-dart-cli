@@ -15,13 +15,13 @@ class GenerateEntity implements IGenerateEntity {
               .exists();
 
       if (existFile) {
-        throw FileExistsError();
+        throw FileExistsError(innerException: Exception());
       }
 
-      await File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
+      File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
           .createSync(recursive: true);
       var content = entityTemplate(entityName);
-      await File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
+      File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
           .writeAsStringSync(content);
       return true;
     } else {

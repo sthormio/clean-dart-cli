@@ -16,14 +16,14 @@ class GenerateError implements IGenerateError {
               .exists();
 
       if (existFile) {
-        throw FileExistsError();
+        throw FileExistsError(innerException: Exception());
       }
 
-      await File('${path}/${ReCase(errorName).snakeCase}_error.dart')
+      File('${path}/${ReCase(errorName).snakeCase}_error.dart')
           .createSync(recursive: true);
       var content = errorTemplate(errorName);
 
-      await File('${path}/${ReCase(errorName).snakeCase}_error.dart')
+      File('${path}/${ReCase(errorName).snakeCase}_error.dart')
           .writeAsStringSync(content);
       return true;
     } else {

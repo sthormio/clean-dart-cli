@@ -1,13 +1,12 @@
 import 'package:args/args.dart';
-import 'package:clean_dart_cli/modules/common_commands/common_module.dart';
-
+import 'common_commands/common_module.dart';
 import 'generate_layers/generate_module.dart';
 
 class AppModule {
-  GenerateModule generate;
-  CommonCommandsModule commandsModule;
-  ArgResults argResults;
-  ArgParser argParser;
+  late GenerateModule generate;
+  late CommonCommandsModule commandsModule;
+  late ArgResults argResults;
+  late ArgParser argParser;
 
   void _addOptionsArguments(ArgParser argParser) {
     argParser.addOption(

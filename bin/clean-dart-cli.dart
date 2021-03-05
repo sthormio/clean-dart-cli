@@ -2,9 +2,10 @@ import 'package:clean_dart_cli/modules/app_module.dart';
 import 'package:clean_dart_cli/modules/common_commands/controllers/common_commands_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_layer_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_domain_controller.dart';
+import 'package:clean_dart_cli/shared/errors/not_valid_arguments_error.dart';
 import 'package:clean_dart_cli/shared/utils/output_utils.dart' as output;
 
-AppModule appModule;
+late AppModule appModule;
 
 // List<String> arguments = ['upgrade'];
 
@@ -20,7 +21,7 @@ void main(List<String> arguments) {
 
   var isValidArguments = _validateArguments(arguments);
 
-  if (isValidArguments != null) {
+  if (isValidArguments != 'not valid arguments') {
     switch (isValidArguments) {
       case 'version':
         commomCommandsController.getVersionCli();
@@ -81,66 +82,14 @@ void main(List<String> arguments) {
         break;
       default:
     }
-    return;
   }
-
-  // if (isValidArguments != null) {
-  //   switch (arguments[1]) {
-  //     case 'layer':
-  //       if (arguments.length > 2) {
-  //         generateLayerController.generateLayerFolders(
-  //           layeCommand: arguments[2],
-  //           path: arguments.length == 4 ? arguments[3] : './',
-  //         );
-  //       } else {
-  //         output.error('Invalid command, try with --help or -h');
-  //       }
-
-  //       break;
-  //     case 'usecase':
-  //       if (arguments.length > 3) {
-  //         generateUsecaseController.generateUsecase(arguments[3], arguments[2]);
-  //       } else {
-  //         output.error('Missing arguments, especific your usecase name');
-  //       }
-  //       break;
-  //     case 'entity':
-  //       if (arguments.length > 3) {
-  //         generateUsecaseController.generateEntity(arguments[3], arguments[2]);
-  //       } else {
-  //         output.error('Missing arguments, especific your entity name');
-  //       }
-  //       break;
-  //     case 'model':
-  //       if (arguments.length > 3) {
-  //         generateUsecaseController.generateModel(arguments[3], arguments[2]);
-  //       } else {
-  //         output.error('Missing arguments, especific your model name');
-  //       }
-  //       break;
-  //     case 'error':
-  //       if (arguments.length > 3) {
-  //         generateUsecaseController.generateError(arguments[3], arguments[2]);
-  //       } else {
-  //         output.error('Missing arguments, especific your error name');
-  //       }
-  //       break;
-  //     case 'modelJs':
-  //       if (arguments.length > 3) {
-  //         generateUsecaseController.generateModelJs(arguments[3], arguments[2]);
-  //       } else {
-  //         output.error('Missing arguments, especific your modelJs name');
-  //       }
-  //       break;
-  //     default:
-  //   }
-  // }
+  return;
 }
 
 String _validateArguments(List<String> arguments) {
   if (arguments.isEmpty) {
     output.error('No arguments, try with --help or -h');
-    return null;
+    return 'not valid arguments';
   }
 
   appModule.argResults = appModule.argParser.parse(arguments);
@@ -160,20 +109,20 @@ String _validateArguments(List<String> arguments) {
 ${appModule.argParser.usage}
 ''',
     );
-    return null;
+    return 'not valid arguments';
   }
   if (arguments.length < 2) {
     output.error('Invalid command, try with --help or -h');
-    return null;
+    return 'not valid arguments';
   }
-  var isValidArguments =
-      appModule.argParser.options[arguments[0]].allowed.contains(arguments[1]);
+  var isValidArguments = appModule.argParser.options[arguments[0]]?.allowed
+      ?.contains(arguments[1]);
 
-  if (isValidArguments) {
+  if (isValidArguments!) {
     return arguments[1];
   } else {
     output.error('Invalid command, try with --help or -h');
-    return null;
+    return 'not valid arguments';
   }
 }
 

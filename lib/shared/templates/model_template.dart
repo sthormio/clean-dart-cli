@@ -3,7 +3,7 @@ import 'package:recase/recase.dart';
 String modelTemplate(String modelName) {
   var output = '''
 class ${ReCase(modelName).pascalCase}Model extends ${ReCase(modelName).pascalCase}Entity {
-  ${ReCase(modelName).pascalCase}Model({String id, String userName}):super(
+  ${ReCase(modelName).pascalCase}Model({required String id, required String userName}):super(
     id:id, userName:userName,
   );
 

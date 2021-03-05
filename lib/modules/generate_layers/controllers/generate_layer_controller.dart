@@ -22,9 +22,9 @@ class GenerateLayerController {
   );
 
   void _generateLayer({
-    String layer,
-    String path,
-    ClassLayer layerClass,
+    required String layer,
+    required String path,
+    required ClassLayer layerClass,
   }) async {
     output.warn('generating $layer layer....');
     var pathNomalized = p.normalize('${p.current}/$path');
@@ -55,8 +55,8 @@ class GenerateLayerController {
   }
 
   Future<void> generateLayerFolders({
-    String layeCommand,
-    String path,
+    required String layeCommand,
+    required String path,
   }) async {
     switch (layeCommand) {
       case 'domain':
