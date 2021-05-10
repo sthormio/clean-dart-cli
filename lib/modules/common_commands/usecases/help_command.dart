@@ -1,5 +1,4 @@
 import 'package:args/args.dart';
-import 'package:clean_dart_cli/modules/app_module.dart';
 import 'package:clean_dart_cli/shared/interfaces/ihelp_command.dart';
 import '../../../shared/utils/output_utils.dart' as output;
 
