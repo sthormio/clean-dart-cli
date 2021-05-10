@@ -22,7 +22,7 @@ class GenerateDomainController {
     this._generateModelJs,
   );
 
-  Future<void> generateUsecase(String usecaseName, String path) async {
+  Future<bool> generateUsecase(String usecaseName, String path) async {
     output.warn('generating usecase $usecaseName....');
     var pathNomalized = p.normalize('${p.current}/$path');
 
@@ -31,71 +31,81 @@ class GenerateDomainController {
 
       if (result) {
         output.title('$usecaseName created');
-        return;
+        return true;
       }
       output.error('Directory not exists');
+      return false;
     } on FileExistsError catch (e) {
       output.error(e.message);
+      return false;
     }
   }
 
-  Future<void> generateEntity(String entityName, String path) async {
+  Future<bool> generateEntity(String entityName, String path) async {
     output.warn('generating usecase $entityName....');
     var pathNomalized = p.normalize('${p.current}/$path');
     try {
       var result = await _generateEntity.call(entityName, pathNomalized);
       if (result) {
         output.title('$entityName created');
-        return;
+        return true;
       }
       output.error('Directory not exists');
+      return false;
     } on FileExistsError catch (e) {
       output.error(e.message);
+      return false;
     }
   }
 
-  Future<void> generateModel(String modelName, String path) async {
+  Future<bool> generateModel(String modelName, String path) async {
     output.warn('generating model $modelName....');
     var pathNomalized = p.normalize('${p.current}/$path');
     try {
       var result = await _generateModel.call(modelName, pathNomalized);
       if (result) {
         output.title('$modelName created');
-        return;
+        return true;
       }
       output.error('Directory not exists');
+      return false;
     } on FileExistsError catch (e) {
       output.error(e.message);
+      return false;
     }
   }
 
-  Future<void> generateModelJs(String modelName, String path) async {
+  Future<bool> generateModelJs(String modelName, String path) async {
     output.warn('generating model $modelName....');
     var pathNomalized = p.normalize('${p.current}/$path');
     try {
       var result = await _generateModelJs.call(modelName, pathNomalized);
       if (result) {
         output.title('$modelName created');
-        return;
+        return true;
       }
       output.error('Directory not exists');
+      return false;
     } on FileExistsError catch (e) {
       output.error(e.message);
+      return false;
     }
   }
 
-  Future<void> generateError(String errorName, String path) async {
+  Future<bool> generateError(String errorName, String path) async {
     output.warn('generating error $errorName....');
     var pathNomalized = p.normalize('${p.current}/$path');
     try {
       var result = await _generateError.call(errorName, pathNomalized);
       if (result) {
         output.title('$errorName created');
-        return;
+        return true;
       }
       output.error('Directory not exists');
+      return false;
     } on FileExistsError catch (e) {
       output.error(e.message);
+      return false;
     }
   }
 }

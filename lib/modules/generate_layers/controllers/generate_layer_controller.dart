@@ -23,7 +23,7 @@ class GenerateLayerController {
     this._complete,
   );
 
-  void _generateLayer({
+  Future<void> _generateLayer({
     required String layer,
     required String path,
     required ClassLayer layerClass,
@@ -91,35 +91,35 @@ class GenerateLayerController {
   }) async {
     switch (layerCommand) {
       case 'domain':
-        _generateLayer(
+        await _generateLayer(
           layer: layerCommand,
           path: path,
           layerClass: ClassLayer.Domain,
         );
         break;
       case 'infra':
-        _generateLayer(
+        await _generateLayer(
           layer: layerCommand,
           path: path,
           layerClass: ClassLayer.Infra,
         );
         break;
       case 'external':
-        _generateLayer(
+        await _generateLayer(
           layer: layerCommand,
           path: path,
           layerClass: ClassLayer.External,
         );
         break;
       case 'ui':
-        _generateLayer(
+        await _generateLayer(
           layer: layerCommand,
           path: path,
           layerClass: ClassLayer.UI,
         );
         break;
       case 'complete':
-        _generateLayer(
+        await _generateLayer(
           layer: layerCommand,
           path: path,
           layerClass: ClassLayer.Complete,
