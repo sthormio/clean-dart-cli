@@ -2,7 +2,6 @@ import 'package:clean_dart_cli/modules/app_module.dart';
 import 'package:clean_dart_cli/modules/common_commands/controllers/common_commands_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_layer_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_domain_controller.dart';
-import 'package:clean_dart_cli/shared/errors/not_valid_arguments_error.dart';
 import 'package:clean_dart_cli/shared/utils/output_utils.dart' as output;
 
 late AppModule appModule;

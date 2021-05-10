@@ -11,7 +11,7 @@ class GenerateUsecases implements IGenerateUsecases {
     var isValidDirectory = await Directory(path).exists();
 
     var existFile =
-        await File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
+        await File('$path/${ReCase(usecaseName).snakeCase}_usecase.dart')
             .exists();
 
     if (existFile) {
@@ -19,10 +19,10 @@ class GenerateUsecases implements IGenerateUsecases {
     }
 
     if (isValidDirectory) {
-      File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
+      File('$path/${ReCase(usecaseName).snakeCase}_usecase.dart')
           .createSync(recursive: true);
       var content = usecaseTemplate(usecaseName);
-      File('${path}/${ReCase(usecaseName).snakeCase}_usecase.dart')
+      File('$path/${ReCase(usecaseName).snakeCase}_usecase.dart')
           .writeAsStringSync(content);
       return true;
     } else {
