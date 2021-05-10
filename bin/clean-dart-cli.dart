@@ -3,13 +3,14 @@ import 'package:clean_dart_cli/modules/common_commands/controllers/common_comman
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_layer_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_domain_controller.dart';
 import 'package:clean_dart_cli/shared/utils/output_utils.dart' as output;
+import 'package:clean_dart_cli/shared/utils/wellcome_message.dart';
 
 late AppModule appModule;
 
 // List<String> arguments = ['upgrade'];
 
 void main(List<String> arguments) {
-  _wellcomeMessage();
+  wellcomeMessage();
   appModule = AppModule();
   var generateLayerController =
       appModule.generate.getIt<GenerateLayerController>();
@@ -123,8 +124,4 @@ ${appModule.argParser.usage}
     output.error('Invalid command, try with --help or -h');
     return 'not valid arguments';
   }
-}
-
-void _wellcomeMessage() {
-  output.title('################### Clean Dart CLI ###################');
 }
