@@ -1,7 +1,9 @@
-import 'package:clean_dart_cli/shared/interfaces/igenerate_layers.dart';
+import 'package:cli_dialog/cli_dialog.dart';
 import 'package:get_it/get_it.dart';
 import 'package:path/path.dart' as p;
-import 'package:clean_dart_cli/shared/utils/output_utils.dart' as output;
+
+import '../../../shared/interfaces/igenerate_layers.dart';
+import '../../../shared/utils/output_utils.dart' as output;
 
 enum ClassLayer { Domain, Infra, External, UI, Complete }
 
@@ -54,42 +56,71 @@ class GenerateLayerController {
     output.error('Directory not exists');
   }
 
+  Map<String, String> askQuestion() {
+    const listQuestions = [
+      [
+        {
+          'question': "What's layer that your want generate?",
+          'options': ['domain', 'infra', 'external', 'ui', 'complete']
+        },
+        'layer'
+      ]
+    ];
+    const questions = [
+      ["What's your path?", 'path']
+    ];
+
+    final dialog = CLI_Dialog(
+      questions: questions,
+      listQuestions: listQuestions,
+      order: ['layer', 'path'],
+    );
+
+    final anwers = dialog.ask();
+
+    final result = <String, String>{
+      'layer': anwers['layer'] as String,
+      'path': anwers['path'] as String,
+    };
+    return result;
+  }
+
   Future<void> generateLayerFolders({
-    required String layeCommand,
+    required String layerCommand,
     required String path,
   }) async {
-    switch (layeCommand) {
+    switch (layerCommand) {
       case 'domain':
         _generateLayer(
-          layer: layeCommand,
+          layer: layerCommand,
           path: path,
           layerClass: ClassLayer.Domain,
         );
         break;
       case 'infra':
         _generateLayer(
-          layer: layeCommand,
+          layer: layerCommand,
           path: path,
           layerClass: ClassLayer.Infra,
         );
         break;
       case 'external':
         _generateLayer(
-          layer: layeCommand,
+          layer: layerCommand,
           path: path,
           layerClass: ClassLayer.External,
         );
         break;
       case 'ui':
         _generateLayer(
-          layer: layeCommand,
+          layer: layerCommand,
           path: path,
           layerClass: ClassLayer.UI,
         );
         break;
       case 'complete':
         _generateLayer(
-          layer: layeCommand,
+          layer: layerCommand,
           path: path,
           layerClass: ClassLayer.Complete,
         );

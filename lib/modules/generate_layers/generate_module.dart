@@ -1,3 +1,4 @@
+import 'package:clean_dart_cli/modules/generate_layers/controllers/generate_controller.dart';
 import 'package:clean_dart_cli/modules/generate_layers/usecases/generate_error.dart';
 import 'package:clean_dart_cli/modules/generate_layers/usecases/generate_model_js.dart';
 import 'package:clean_dart_cli/shared/interfaces/igenerate_error.dart';
@@ -40,6 +41,14 @@ class GenerateModule {
         getIt.get<GenerateUI>(),
       ),
     );
+
+    getIt.registerLazySingleton<GenerateController>(
+      () => GenerateController(
+        getIt.get<GenerateDomainController>(),
+        getIt.get<GenerateLayerController>(),
+      ),
+    );
+
     getIt.registerLazySingleton<GenerateLayerController>(
       () => GenerateLayerController(
         getIt.get<GenerateDomain>(),
