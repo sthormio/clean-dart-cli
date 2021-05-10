@@ -7,7 +7,7 @@ class AskFirstQuestion implements IAskQuestion {
     const listCummonQuestions = [
       [
         {
-          'question': "What's command that you use?",
+          'question': 'Which command would you like to use?',
           'options': [
             'gen',
             'upgrade',

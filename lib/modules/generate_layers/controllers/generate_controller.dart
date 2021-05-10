@@ -18,7 +18,7 @@ class GenerateController {
     const listGenQuestion = [
       [
         {
-          'question': 'What you want generate?',
+          'question': 'What would you like to generate?',
           'options': ['Layer', 'Layer Content']
         },
         'gen'
@@ -36,7 +36,7 @@ class GenerateController {
       const listLayerGenerate = [
         [
           {
-            'question': 'What you want generate?',
+            'question': 'What would you like to generate?',
             'options': ['Domain', 'Infra', 'External', 'UI', 'All']
           },
           'layer'
@@ -60,7 +60,7 @@ class GenerateController {
       const listDomainGenerateContent = [
         [
           {
-            'question': 'What the domain content that you want generate?',
+            'question': 'What layer content would you like to generate?',
             'options': [
               'Usecase',
               'Entity',
@@ -180,7 +180,7 @@ class GenerateController {
     final dialog = CLI_Dialog(
       booleanQuestions: [
         [
-          'Do you would like create domain layer?',
+          'Do you would like create $layer layer?',
           'create_directory',
         ],
       ],
