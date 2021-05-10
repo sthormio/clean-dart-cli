@@ -1,3 +1,8 @@
+## 1.1.0
+
+* Upgrade libraries to totally nullsafety
+* Generate files with questions on terminal
+
 ## 1.0.0
 
 * Add null-safety support
