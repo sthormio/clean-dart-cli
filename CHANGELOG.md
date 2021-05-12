@@ -1,7 +1,8 @@
-## 1.1.0
+1.1.0
 
-* Upgrade libraries to totally nullsafety
-* Generate files with questions on terminal
+## 1.1.1
+
+* Update documentation
 
 ## 1.0.0
 
