@@ -20,7 +20,7 @@ $ pub global activate clean_dart_cli
 $ clean-dart
 ```
 
-![screenshots/cleandart.gif](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/cleandart.gif?raw=true)
+![](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/cleandart.gif?raw=true)
 
 ### Generate the layers folders
 
