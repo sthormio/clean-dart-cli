@@ -1,8 +1,10 @@
 import 'package:args/args.dart';
+import 'package:get_it/get_it.dart';
 import 'common_commands/common_module.dart';
 import 'generate_layers/generate_module.dart';
 
 class AppModule {
+  final getIt = GetIt.instance;
   late GenerateModule generate;
   late CommonCommandsModule commandsModule;
   late ArgResults argResults;
@@ -46,7 +48,8 @@ class AppModule {
   }
 
   void _bootstrap() {
-    argParser = ArgParser();
+    getIt.registerLazySingleton<ArgParser>(() => ArgParser());
+    argParser = getIt.get<ArgParser>();
     _addOptionsArguments(argParser);
     generate = GenerateModule();
     commandsModule = CommonCommandsModule();

@@ -14,6 +14,14 @@ First thing that you need to do is activate the clean-dart-cli, for this run the
 $ pub global activate clean_dart_cli
 ```
 
+### Select options on terminal
+
+```dart
+$ clean-dart
+```
+
+![](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/cleandart.gif?raw=true)
+
 ### Generate the layers folders
 
 With clean-dart-cli you can generate all folders of the one specific layer
@@ -99,7 +107,6 @@ $ clean-dart gen error /user/domain/error User
 ```
 
 ![screenshots/error.png](https://github.com/sthormio/clean-dart-cli/blob/main/screenshots/error.png?raw=true)
-
 
 ## Upgrade Clean Dart Cli
 

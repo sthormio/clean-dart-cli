@@ -11,17 +11,17 @@ class GenerateEntity implements IGenerateEntity {
     var isValidDirectory = await Directory(path).exists();
     if (isValidDirectory) {
       var existFile =
-          await File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
+          await File('$path/${ReCase(entityName).snakeCase}_entity.dart')
               .exists();
 
       if (existFile) {
         throw FileExistsError(innerException: Exception());
       }
 
-      File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
+      File('$path/${ReCase(entityName).snakeCase}_entity.dart')
           .createSync(recursive: true);
       var content = entityTemplate(entityName);
-      File('${path}/${ReCase(entityName).snakeCase}_entity.dart')
+      File('$path/${ReCase(entityName).snakeCase}_entity.dart')
           .writeAsStringSync(content);
       return true;
     } else {

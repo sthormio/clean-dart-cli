@@ -12,18 +12,18 @@ class GenerateError implements IGenerateError {
 
     if (isValidDirectory) {
       var existFile =
-          await File('${path}/${ReCase(errorName).snakeCase}_error.dart')
+          await File('$path/${ReCase(errorName).snakeCase}_error.dart')
               .exists();
 
       if (existFile) {
         throw FileExistsError(innerException: Exception());
       }
 
-      File('${path}/${ReCase(errorName).snakeCase}_error.dart')
+      File('$path/${ReCase(errorName).snakeCase}_error.dart')
           .createSync(recursive: true);
       var content = errorTemplate(errorName);
 
-      File('${path}/${ReCase(errorName).snakeCase}_error.dart')
+      File('$path/${ReCase(errorName).snakeCase}_error.dart')
           .writeAsStringSync(content);
       return true;
     } else {
